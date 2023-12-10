@@ -1,4 +1,3 @@
-import logging
 import re
 import sys
 import warnings
@@ -41,8 +40,6 @@ from conda_lock.models.pip_repository import PipRepository
 
 if TYPE_CHECKING:
     from packaging.tags import Tag
-
-logger = logging.getLogger(__name__)
 
 # NB: in principle these depend on the glibc on the machine creating the conda env.
 # We use tags supported by manylinux Docker images, which are likely the most common
