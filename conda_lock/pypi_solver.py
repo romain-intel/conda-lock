@@ -131,6 +131,11 @@ def _extract_glibc_version_from_virtual_packages(
 ) -> Optional[Version]:
     """Get the glibc version from the "package" repodata of a chosen platform.
 
+    Note that the glibc version coming from a virtual package is never a legacy
+    manylinux tag (i.e. 1, 2010, or 2014). Those tags predate PEP 600 which
+    introduced manylinux tags containing the glibc version. Currently, all
+    relevant glibc versions look like 2.XX.
+
     >>> platform_virtual_packages = {
     ...     "__glibc-2.17-0.tar.bz2": {
     ...         "name": "__glibc",
