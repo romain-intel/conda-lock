@@ -13,4 +13,4 @@ if TYPE_CHECKING:
 # that.
 version: Callable[[str], str] = metadata.version
 
-__version__ = "1.8.2"
+__version__ = "1.8.3"

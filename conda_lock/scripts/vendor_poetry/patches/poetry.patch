@@ -7,4 +7,4 @@ index 2f5d2c1..0de46a4 100644
  version: Callable[[str], str] = metadata.version
 
 -__version__ = version("poetry")
-+__version__ = "1.8.2"
++__version__ = "1.8.3"

@@ -1,6 +1,6 @@
 # Poetry-related:
 cleo==2.1.0
-poetry==1.8.2
+poetry==1.8.3
 poetry-core==1.9.0
 
 # install conda from github

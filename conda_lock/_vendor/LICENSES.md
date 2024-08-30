@@ -14,7 +14,7 @@ Conda lock vendors (and subvendors) several Python packages to reduce the number
 ## Poetry
 
 * cleo v2.1.0, licensed as [MIT](cleo.LICENSE), Copyright (c) 2013 Sébastien Eustace.
-* poetry v1.8.2, licensed as [MIT](poetry.LICENSE), Copyright (c) 2018-present Sébastien Eustace.
+* poetry v1.8.3, licensed as [MIT](poetry.LICENSE), Copyright (c) 2018-present Sébastien Eustace.
 * poetry-core v1.9.0, licensed as [MIT](poetry_core.LICENSE), Copyright (c) 2020 Sébastien Eustace.
   * fastjsonschema v2.19.1, licensed as [BSD 3-Clause](poetry/core/_vendor/fastjsonschema/LICENSE), Copyright (c) 2018, Michal Horejsek.
   * lark v1.1.9, licensed as [MIT](poetry/core/_vendor/lark/LICENSE), Copyright (c) 2017 Erez Shinan.
