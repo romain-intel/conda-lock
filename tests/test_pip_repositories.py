@@ -1,6 +1,7 @@
 import base64
 import os
 import shutil
+import sys
 import tarfile
 
 from io import BytesIO
@@ -142,11 +143,15 @@ def cleared_poetry_cache(tmp_path_factory, testrun_uid: str):
     # <https://pytest-xdist.readthedocs.io/en/latest/how-to.html#making-session-scoped-fixtures-execute-only-once>
     root_tmp_dir = tmp_path_factory.getbasetemp().parent
     testrun_lockfile = root_tmp_dir / f".conda_lock_pytest_{testrun_uid}.lock"
-    print(f"Locking {testrun_lockfile}")
     with FileLock(testrun_lockfile):
+        # Use `pytest -s` to see these messages
+        print(
+            f"Clearing {DEFAULT_CACHE_DIR} based on lock {testrun_lockfile}",
+            file=sys.stderr,
+        )
         clear_poetry_cache()
-        print(f"Cleared {DEFAULT_CACHE_DIR}")
         yield
+        print(f"Releasing lock {testrun_lockfile}", file=sys.stderr)
 
 
 def test_it_uses_pip_repositories_with_env_var_substitution(
