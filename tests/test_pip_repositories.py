@@ -217,3 +217,5 @@ def clear_poetry_cache() -> None:
     # Do another independent check that triggers even if we're in optimized mode
     if "pypoetry-conda-lock" in to_delete.parts:
         shutil.rmtree(DEFAULT_CACHE_DIR, ignore_errors=True)
+    else:
+        raise RuntimeError(f"Refusing to delete {to_delete} as it doesn't look right")
