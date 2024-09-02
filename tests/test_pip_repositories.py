@@ -153,13 +153,13 @@ def test_it_uses_pip_repositories_with_env_var_substitution(
     monkeypatch: "pytest.MonkeyPatch",
     conda_exe: str,
     tmp_path: Path,
+    cleared_poetry_cache: None,
 ):
     # GIVEN an environment.yaml with custom pip repositories and clean cache
     directory = clone_test_dir("test-pip-repositories", tmp_path)
     monkeypatch.chdir(directory)
     environment_file = directory / "environment.yaml"
     assert environment_file.exists(), list(directory.iterdir())
-    clear_poetry_cache()
 
     # WHEN I create the lockfile
     run_lock([directory / "environment.yaml"], conda_exe=conda_exe)
